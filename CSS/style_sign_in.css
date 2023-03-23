@@ -50,11 +50,11 @@ h1{
 }
 
 #fish{
-	top: 120px;
+	top: 150px;
 }
 
 #fish2{
-	top: 260px;
+	top: 300px;
 	animation-delay: 12s;
 	-webkit-animation-delay: 12s;
 }
