@@ -1,8 +1,13 @@
 body {
-    background-color: #98d4f3;
-}
+        background-image: url("back.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
 .container {
   margin-top: 30px;
+  
 }
 .cart-item {
   display: flex;
