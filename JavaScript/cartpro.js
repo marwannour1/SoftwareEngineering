@@ -7,7 +7,7 @@ var fadeTime = 300;
 $(".product-quantity input").change(function () {
   updateQuantity(this);
 });
-
+// bhbk ya maro
 $(".product-removal button").click(function () {
   removeItem(this);
 });
