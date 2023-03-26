@@ -2,6 +2,7 @@ body{
     background-image: url('https://www.freepik.com/free-photos-vectors/fish-background') ;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     
 }
 .product-image {
