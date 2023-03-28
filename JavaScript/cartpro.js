@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
 /* Set rates + misc */
 var taxRate = 0.05;
 var shippingRate = 15.0;
@@ -68,4 +68,5 @@ function removeItem(removeButton) {
     productRow.remove();
     recalculateCart();
   });
-}
+  }
+});

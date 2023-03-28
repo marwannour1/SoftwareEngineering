@@ -129,14 +129,14 @@ body{
   .product .remove-product {
     border: 0;
     padding: 4px 8px;
-    background-color: #c66;
+    background-color: rgb(21, 134, 234);
     color: #fff;
     font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
     font-size: 12px;
     border-radius: 3px;
   }
   .product .remove-product:hover {
-    background-color: #a44;
+    background-color: rgb(26, 116, 226);
   }
   
   /* Totals section */
