@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/cart.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="JavaScript/cart.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Shopping Cart</h2>
+  
+  <div class="cart-item">
+    <div class="item-name">bolty</div>
+    <div class="item-count">
+      <button class="btn btn-default btn-sm minus-btn">-</button>
+      <span class="count">0</span>
+      <button class="btn btn-default btn-sm plus-btn">+</button>
+    </div>
+    <div class="item-price">$70</div>
+    <button type="button" class="btn btn-danger remove-btn">Remove</button>
+  </div>
+
+  <div class="cart-item">
+    <div class="item-name">salmon</div>
+    <div class="item-count">
+      <button class="btn btn-default btn-sm minus-btn">-</button>
+      <span class="count">0</span>
+      <button class="btn btn-default btn-sm plus-btn">+</button>
+    </div>
+    <div class="item-price">$20</div>
+    <button type="button" class="btn btn-danger remove-btn">Remove</button>
+  </div>
+
+
+  <!-- Add more items here -->
+
+<div class="cart-item">
+  <div class="item-name">boory</div>
+  <div class="item-count">
+    <button class="btn btn-default btn-sm minus-btn">-</button>
+    <span class="count">0</span>
+    <button class="btn btn-default btn-sm plus-btn">+</button>
+  </div>
+  <div class="item-price">$40</div>
+  <button type="button" class="btn btn-danger remove-btn">Remove</button>
+</div>
+
+  <!-- Total price -->
+  <hr />
+  <h4>Total Price:</h4><p id='total-price'>$0</p>
+
+  <!-- Proceed to checkout -->
+  <a href="#" role='button' class='btn btn-primary'>Proceed to Checkout</a>
+
+</div>
+</body>
+</html>```
