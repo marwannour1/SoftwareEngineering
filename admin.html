@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+      
+
+
+
+    <link rel="stylesheet" href="CSS/adminstyles.css">
+
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar">
+                <span class="material-icons-outlined">
+                    menu
+                    </span>
+            </div>
+            <div class="heade-left"><span class="material-icons-outlined">
+                search
+                </span>
+            </div>
+            <div class="header-right">
+                <span class="material-icons-outlined">notifications</span>
+                <span class="material-icons-outlined">email</span>
+                <span class="material-icons-outlined">account_circle</span>
+
+            </div>
+        </header>
+        <aside id="sidebar">
+            <div class="sidebar-tittle">
+                <div class="sidebar-brand">
+                    <span class="material-icons-outlined">inventory</span>Admin page
+                </div>
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                      <span class="material-icons-outlined">dashboard</span> Dashboard
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                      <span class="material-icons-outlined">inventory_2</span> Products
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                      <span class="material-icons-outlined">fact_check</span> Inventory
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                      <span class="material-icons-outlined">add_shopping_cart</span> Purchase Orders
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                      <span class="material-icons-outlined">shopping_cart</span> Sales Orders
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                      <span class="material-icons-outlined">poll</span> Reports
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                      <span class="material-icons-outlined">settings</span> Settings
+                    </a>
+                  </li>
+            </ul>
+        </aside>
+        <main class="main-container">
+            <div class="main-title">
+                <p class="font-weight-bold">DASHBOARD</p>
+              </div>
+      
+              <div class="main-cards">
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <p class="text-primary">PRODUCTS</p>
+                    <span class="material-icons-outlined text-blue">inventory_2</span>
+                  </div>
+                  <span class="text-primary font-weight-bold">255</span>
+                </div>
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <p class="text-primary">PURCHASE ORDERS</p>
+                    <span class="material-icons-outlined text-orange">add_shopping_cart</span>
+                  </div>
+                  <span class="text-primary font-weight-bold">83</span>
+                </div>
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <p class="text-primary">SALES ORDERS</p>
+                    <span class="material-icons-outlined text-green">shopping_cart</span>
+                  </div>
+                  <span class="text-primary font-weight-bold">79</span>
+                </div>
+      
+                <div class="card">
+                  <div class="card-inner">
+                    <p class="text-primary">INVENTORY ALERTS</p>
+                    <span class="material-icons-outlined text-red">notification_important</span>
+                  </div>
+                  <span class="text-primary font-weight-bold">16</span>
+                </div>
+      
+              </div>
+        </main>
+    </div>
+
+    <script src="Javascript/adminscripts.js"></script>
+</body>
+</html>
