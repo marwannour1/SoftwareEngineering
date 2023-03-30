@@ -1,0 +1,162 @@
+body, html {
+    height: 100%;
+    margin: 0; 
+  }
+  
+  /* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 240px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #6c99af; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 30px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 40px 10px 6px 19px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: "Tahoma";
+    color: #001f2b;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #00415a;
+  }
+  
+  .sidenav input[type=text] {
+    width: 194px;
+    float: center;
+    padding: 17px;
+    border: none;
+    margin-top: 12px;
+    margin-right: 6px;
+    margin-left: 6px;
+    font-size: 20px;
+    display: block;
+  }
+
+  /* Style page content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidebar */
+    margin-right: -50px;  
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    opacity: 0.6;
+  }
+
+
+  .main::before {  
+    content: "";
+    /* The image used */
+    background-image: url("fish2.jpg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    position: absolute;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  
+  
+  /*text on top of image */
+  .container {
+    margin-left: 300px;
+    font-family: "Arial";
+    position: relative;
+    text-align: left;
+    color: rgb(255, 255, 255);
+  }
+  /* Centered text */
+  .centered {
+    position: relative;
+    top: -60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 90px;
+    color: #040404;
+    opacity: 1;
+  }
+
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    .topnav input[type=text] {
+        border: 1px solid #c10b0b;
+      }
+  }
+  
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+  }
+  
+  /* Center website */
+  .main2 {
+    max-width: 1000px;
+    margin-left: 540px;
+    margin-top: 200px;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+  }
+  
+  .row {
+    margin: 8px -16px;
+  }
+  
+  /* Add padding BETWEEN each column (if you want) */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create four equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Clear floats after rows */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+  .content {
+    background-color: white;
+    padding: 10px;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 900px) {
+    .column {
+      width: 50%;
+    }
+  }
