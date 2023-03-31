@@ -1,18 +1,22 @@
 body{
-    background-image: url('https://www.freepik.com/free-photos-vectors/fish-background') ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    
-}
+  background-image: url('https://static.vecteezy.com/system/resources/previews/005/243/697/non_2x/blue-sea-background-with-small-and-big-fish-free-vector.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+ h1{
+  color:#eee;
+  text-shadow: 2px 2px 5px black;
+ }
 .product-image {
     float: left;
     width: 20%;
+    
   }
   
   .product-details {
     float: left;
     width: 37%;
+    
   }
   
   .product-price {
