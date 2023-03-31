@@ -1,5 +1,7 @@
 body, html {
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     margin: 0; 
   }
   
@@ -116,7 +118,7 @@ body, html {
   /* Center website */
   .main2 {
     max-width: 1000px;
-    margin-left: 540px;
+    margin-left: 350px;
     margin-top: 200px;
   }
   
@@ -138,7 +140,7 @@ body, html {
   /* Create four equal columns that floats next to each other */
   .column {
     float: left;
-    width: 25%;
+    width: 50%;
   }
   
   /* Clear floats after rows */
@@ -150,8 +152,23 @@ body, html {
   
   /* Content */
   .content {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     padding: 10px;
+  }
+
+  .row a:link,.row a:visited {
+    background-color: white;
+    color: black;
+    border: 2px solid #6c99af;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .row a:hover,.row a:active {
+    background-color: #6c99af;
+    color: white;
   }
   
   /* Responsive layout - makes a two column-layout instead of four columns */
@@ -160,3 +177,5 @@ body, html {
       width: 50%;
     }
   }
+
+  
