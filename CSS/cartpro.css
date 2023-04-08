@@ -16,7 +16,8 @@ body{
   .product-details {
     float: left;
     width: 37%;
-    
+    font-size: 135%;
+    text-shadow: 2px 2px 5px rgb(246, 244, 244);
   }
   
   .product-price {
