@@ -20,15 +20,6 @@ body {
 	
 }
 
-
-
-@-webkit-keyframes myfirst
-{
-	0% {margin-left: -235px}
-	90% {margin-left: 100%;}
-	100% {margin-left: 100%;}
-}
-
 /* Animation */
 @keyframes myfirst
 {
@@ -36,7 +27,7 @@ body {
 	70% {margin-left: 100%;}
 	100% {margin-left: 100%;}
 }
-/* Top fish that swim */
+/* fish that swim */
 .fish{
 	background-image: url('http://www.geertjanhendriks.nl/codepen/form/fish.png');
 	width: 235px;
@@ -44,28 +35,26 @@ body {
 	margin-left: -235px;
 	position: absolute;	
 	animation: myfirst 24s;
-	-webkit-animation: myfirst 24s;
 	animation-iteration-count: infinite;
-	-webkit-animation-iteration-count: infinite;
 	animation-timing-function: linear;
-	-webkit-animation-timing-function: linear;
+	
 }
 
-
+/* first fish group position */
 #fish{
-	top: 150px;
+	top: 250px;
 }
 
+/*second fish group*/
 #fish2{
-	top: 300px;
+	top: 400px;
 	animation-delay: 12s;
-	-webkit-animation-delay: 12s;
 }
 
 
 /*form styles*/
 #msform {
-	width: 400px;
+	max-width: 600px;
 	margin: 50px auto;
 	text-align: center;
 	position: relative;
@@ -141,7 +130,7 @@ body {
 	color: white;
 	text-transform: uppercase;
 	font-size: 9px;
-	width: 50%;
+	width: 33.33%;
 	float: left;
 	position: relative;
 }
