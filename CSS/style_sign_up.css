@@ -4,27 +4,17 @@
 /*basic reset*/
 * {margin: 0; padding: 0;}
 
-html {
-	height: 100%;
-	/*Image only BG fallback*/
-	
-	/*background = gradient + image pattern combo*/
-	
-		
-}
-
 body {
 	font-family: montserrat, arial, verdana;
 	background-color: #98d4f3;
 	overflow: hidden;
-	
 }
 
 /* Animation */
 @keyframes myfirst
 {
-	0% {margin-left: -235px}
-	70% {margin-left: 100%;}
+	
+	70% {margin-left: 100%;}     /* so fish group stay hidden from 16.8s to 24s */
 	100% {margin-left: 100%;}
 }
 /* fish that swim */
@@ -35,34 +25,35 @@ body {
 	margin-left: -235px;
 	position: absolute;	
 	animation: myfirst 24s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	animation-iteration-count: infinite;  /* infinite animation */
+	animation-timing-function: linear;    /* linear animation timing moves at constant speed */
 	
 }
 
 /* first fish group position */
 #fish{
-	top: 250px;
+	top: 300px;        /* position of first fish group from top of screen */
 }
 
 /*second fish group*/
 #fish2{
-	top: 400px;
+	top: 650px;               /* position of second fish group from top of screen */    
 	animation-delay: 12s;
 }
 
 
 /*form styles*/
 #msform {
-	max-width: 600px;
-	margin: 50px auto;
+	max-width: 800px;
+	margin: 100px auto;
 	text-align: center;
 	position: relative;
 }
-#msform fieldset {
+/* fieldset styles */
+#msform fieldset {                     
 	background: white;
 	border: 0 none;
-	border-radius: 3px;
+	border-radius: 50px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
 	box-sizing: border-box;
@@ -78,9 +69,9 @@ body {
 }
 /*inputs*/
 #msform input, #msform textarea {
-	padding: 15px;
+	padding: 30px;
 	border: 1px solid #ccc;
-	border-radius: 3px;
+	border-radius: 10px;
 	margin-bottom: 10px;
 	width: 100%;
 	box-sizing: border-box;
@@ -95,19 +86,20 @@ body {
 	font-weight: bold;
 	color: white;
 	border: 0 none;
-	border-radius: 1px;
+	border-radius: 10px;
 	cursor: pointer;
 	padding: 10px;
 	margin: 10px 5px;
-  text-decoration: none;
-  font-size: 14px;
+  	text-decoration: none;
+  	font-size: 14px;
 }
+/* hover effects */
 #msform .action-button:hover, #msform .action-button:focus {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
 /*headings*/
 .fs-title {
-	font-size: 15px;
+	font-size: 20px;
 	text-transform: uppercase;
 	color: #2C3E50;
 	margin-bottom: 10px;
@@ -120,10 +112,10 @@ body {
 }
 /*progressbar*/
 #progressbar {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	overflow: hidden;
 	/*CSS counters to number the steps*/
-	counter-reset: step;
+	counter-reset: step;        /* to put number in little boxes*/
 }
 #progressbar li {
 	list-style-type: none;
@@ -134,19 +126,20 @@ body {
 	float: left;
 	position: relative;
 }
-#progressbar li:before {
-	content: counter(step);
-	counter-increment: step;
+/*to make progress bar boxes */
+#progressbar li:before {              
+	content: counter(step);     
+	counter-increment: step;           /*increment counter by 1 */
 	width: 20px;
 	line-height: 20px;
-	display: block;
+	display: block;                     /* so that text doesn't overlap with the progress bar */
 	font-size: 10px;
 	color: #333;
 	background: white;
 	border-radius: 3px;
 	margin: 0 auto 5px auto;
 }
-/*progressbar connectors*/
+/*progressbar connector lines*/
 #progressbar li:after {
 	content: '';
 	width: 100%;
@@ -154,7 +147,7 @@ body {
 	background: white;
 	position: absolute;
 	left: -50%;
-	top: 9px;
+	top: 10px;
 	z-index: -1; /*put it behind the numbers*/
 }
 #progressbar li:first-child:after {

@@ -2,13 +2,36 @@
 $(document).ready(function () {
   var current_fs, next_fs, previous_fs; //fieldsets
   var left, opacity, scale; //fieldset properties which we will animate
-  var animating; //flag to prevent quick multi-click glitches
-  
-
+  var animating = false; //flag to prevent quick multi-click glitches
+  let i = 0;  //index of myForm
+  let j = 3;  //index of search limit
   $(".next").click(function () {
+    for (let x = i; x<j; x++){   //loop through the three forms in every page
+      if(x == 2){                       //checks if password and confirm password are the same
+        if($(".myForm").eq(x).val() != $(".myForm").eq(x-1).val()){            
+          alert("Password and confirm password do not match")
+          return false
+        }
+      }
+      if (x == 5){           //checks if number has 11 digits as any egyptian number
+        if ($(".myForm").eq(x).val().toString().length != 11){
+          alert("invalid phone number")
+          return false;
+        }
+      }
+
+      if ($(".myForm").eq(x).val() == ""){            //check if the rest of the forms are not empty
+        $(".myForm").eq(x).css("border", "2px solid red")
+        return false;
+      }else{
+        $(".myForm").eq(x).css("border", "none")
+      }
+    }
     if (animating) return false;
 	
     animating = true;
+    i+=3
+    j+=3;
 
     current_fs = $(this).parent();
     next_fs = $(this).parent().next();
@@ -50,6 +73,8 @@ $(document).ready(function () {
   $(".previous").click(function () {
     if (animating) return false;
     animating = true;
+    i-=3;
+    j-=3;
 
     current_fs = $(this).parent();
     previous_fs = $(this).parent().prev();
