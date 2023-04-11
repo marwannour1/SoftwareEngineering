@@ -12,6 +12,12 @@ $(document).ready(function(){
   $(".product-removal button").click(function () {
     removeItem(this);
   });
+  /* prevent wrong input */
+  $(".product-quantity input").on("input", function() {
+    if (this.value < this.min) {
+      this.value = this.min;
+    }
+  });
   
   /* Recalculate cart */
   function recalculateCart() {
