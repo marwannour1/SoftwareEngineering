@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="CSS/style_sign_in.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="JavaScript/script_sign_in.js"></script>
+    <link rel="icon" href="images/fish-store-website-favicon-color (1).png" type="image/x-icon">
     <title>Sign in</title>
 </head>
 <body>
@@ -16,25 +17,26 @@
     
     <div id="form">
     
-    <div class="fish" id="fish"></div>
-    <div class="fish" id="fish2"></div>
+        <div class="fish" id="fish"></div>     <!--first moving fish squad-->
     
-    <form id="waterform" method="post">
+        <div class="fish" id="fish2"></div>    <!--second moving fish squad-->
     
-        <div class="formgroup" id="email-form">
-            <label for="email">Your e-mail*</label>
-            <input type="email" id="email" name="email" />
-        </div>
+        <form id="waterform" method="post">    <!--begin form-->
+    
+            <div class="formgroup" id="email-form">      <!--email form-->
+                <label for="email">Your e-mail*</label>
+                <input type="email" id="email" name="email" />
+            </div>
 
 
-        <div class="formgroup" id="password-form">
-            <label for="password">Your password*</label>
-            <input type="password" id="password" name="password" />
-        </div>
+            <div class="formgroup" id="password-form">        <!--password form-->
+                <label for="password">Your password*</label>
+                <input type="password" id="password" name="password" />
+            </div>
     
-        <input type="submit" value="Sign in!" class="submit"/>
-        <p>Not registered?</p>
-        <a href="sign_up.html" style="text-align: center;">Create an account!</a>
+            <input type="submit" value="Sign in!" class="submit"/>       <!--submit button to sign in--> 
+            <p>Not registered?</p>
+            <a href="sign_up.html" style="text-align: center;">Create an account!</a>  <!--link to go to sign up page-->
     </form>
 
     </div>
