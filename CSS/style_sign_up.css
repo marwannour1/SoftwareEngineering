@@ -7,7 +7,7 @@
 body {
 	font-family: montserrat, arial, verdana;
 	background-color: #98d4f3;
-	overflow: hidden;
+	overflow: hidden;   
 }
 
 /* Animation */
@@ -32,20 +32,20 @@ body {
 
 /* first fish group position */
 #fish{
-	top: 300px;        /* position of first fish group from top of screen */
+	top: 20%;        /* position of first fish group from top of screen */
 }
 
 /*second fish group*/
 #fish2{
-	top: 650px;               /* position of second fish group from top of screen */    
+	top: 60%;               /* position of second fish group from top of screen */    
 	animation-delay: 12s;
 }
 
 
 /*form styles*/
 #msform {
-	max-width: 800px;
-	margin: 100px auto;
+	max-width: 50%;
+	margin: 7% auto;
 	text-align: center;
 	position: relative;
 }
@@ -69,10 +69,10 @@ body {
 }
 /*inputs*/
 #msform input, #msform textarea {
-	padding: 30px;
+	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 7px;
 	width: 100%;
 	box-sizing: border-box;
 	font-family: montserrat;

@@ -1,3 +1,9 @@
+const validateEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
+
 //jQuery time
 $(document).ready(function () {
   var current_fs, next_fs, previous_fs; //fieldsets
@@ -6,7 +12,23 @@ $(document).ready(function () {
   let i = 0;  //index of myForm
   let j = 3;  //index of search limit
   $(".next").click(function () {
-    for (let x = i; x<j; x++){   //loop through the three forms in every page
+    for (let x = i; x<j; x++){ //loop through the three forms in every page
+      
+      
+      if(x==1){
+
+        const email = $('#email').val();
+        
+        if(!validateEmail(email)){
+          alert('Please enter a valid email');
+          return false;
+        
+        } 
+        
+        
+      }
+      
+      
       if(x == 2){                       //checks if password and confirm password are the same
         if($(".myForm").eq(x).val() != $(".myForm").eq(x-1).val()){            
           alert("Password and confirm password do not match")
