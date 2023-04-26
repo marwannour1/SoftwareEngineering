@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="html">
+<head>
 <link rel="stylesheet" type="text/css" href="CSS/homepagestyle.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Teko&display=swap" rel="stylesheet">
 <link rel="icon" href="images/fish-store-website-favicon-color (1).png" type="image/x-icon">
-<head>
+
+
     <title>kheer El Bahr</title>
 </head>
 
-<body>
+<body style="margin: 0;">
 
-  <div class="sidenav">
-    <input type="text" placeholder="Search..">
+  <div class="topnav">
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
     <a href="index.html"><i class="fa fa-fw fa-home" style="font-size:30px;"></i> Home</a>
     <a href="cartpro.html"><i class="fa fa-shopping-cart" style="font-size:28px;"></i> Shopping cart</a>
     <a href="sign_up.html"><i class="fa fa-bars" style="font-size:24px;"></i> Sign up</a>
@@ -19,32 +32,38 @@
   </div>
   
   <!-- Page content -->
-  <div class="main">
-    <img src="images/fish2.jpg" alt="Snow" style="width:100%;">
+  <div class="bg-image"></div>
+
+  <div class="bg-text">
+    <h1 style="font-family:  'Teko', sans-serif;">Kheer El Bahr</h1>
+    <p style="font-family:  'Teko', sans-serif; font-size: 40px;">The Highest Quality Fish</p>
   </div>
-  <div class="container">
-  <div class="centered">
-      Welcome to</br>
-      kheer El Bahr
-  </div>
-  </div>
+  
 
 
 <div class="main2">
 
   <h1>OUR PRODUCTS</h1>
+  
   <hr>
   
   <h2>FISH</h2>
-  <p>select from a wide range of fish</p>
+  <p style="font-family: 'Teko', sans-serif; font-size: 30px;">select from a wide range of fish</p>
   
   <!-- Portfolio Gallery Grid -->
   <div class="row">
     <div class="column">
       <div class="content">
-        <img src="images/cod.jpg" alt="cod" style="width:100%">
+        <div class="container">
+         <img src="images/cod.jpg" alt="cod" style="width:100%">
+         <div class="overlay">
+          <div class="text">Cod is one of the most popular fish types in the United States. 
+            Cod is a white fish that has a mild flavor and can be baked, broiled, fried, or steamed. Cod are available 
+            year-round but the best time to purchase them is during the winter months.</div>
+         </div>
+        </div>
         <h3>COD</h3>
-        <p>60 EGP</p>
+        <p>20.89 EGP</p>
         <element class="row">
           <a href="cartpro.html">Add to cart</a>
         </element>
@@ -52,9 +71,16 @@
     </div>
     <div class="column">
       <div class="content">
-        <img src="images/fluke_fillet.jpg" alt="FLUKE" style="width:100%">
+        <div class="container">
+         <img src="images/fluke_fillet.jpg" alt="FLUKE" style="width:100%">
+         <div class="overlay">
+          <div class="text">The Fluke or Summer Flounder has a mild and delicate flavor and is great for those who don't 
+            typically eat seafood . 
+             With no “fishy” taste and a light texture, fluke is perfectly paired with delicate sauces and seasonings.</div>
+         </div>
+        </div>
         <h3>FLUKE FILLET</h3>
-        <p>100 EGP</p>
+        <p>32.29 EGP</p>
         <element class="row">
           <a href="cartpro.html">Add to cart</a>
         </element>
@@ -62,9 +88,15 @@
     </div>
     <div class="column">
       <div class="content">
-        <img src="images/salmon.jpg" alt="SALMON" style="width:100%">
+        <div class="container">
+         <img src="images/salmon.jpg" alt="SALMON" style="width:100%">
+         <div class="overlay">
+          <div class="text">Our Atlantic salmon has a melt-in-your-mouth texture and tender flakes.
+             Thanks to our direct relationships with select farms we are able to deliver the finest salmon direct from the source.</div>
+         </div>
+        </div>
         <h3>SALMON</h3>
-        <p>130 EGP</p>
+        <p>19.94 EGP</p>
         <element class="row">
           <a href="cartpro.html">Add to cart</a>
         </element>
@@ -72,9 +104,15 @@
     </div>
     <div class="column">
       <div class="content">
-        <img src="images/whole_common_carp.jpg" alt="whole_common_carp" style="width:100%">
+        <div class="container">
+         <img src="images/whole_common_carp.jpg" alt="whole_common_carp" style="width:100%">
+         <div class="overlay">
+          <div class="text">The common carp, or European carp,
+             is a widespread freshwater fish with a mild flavor and tender flesh, with practically no “fishy” taste.</div>
+         </div>
+        </div>
         <h3>WHOLE COMMON CARP</h3>
-        <p>150 EGP</p>
+        <p>34.19 EGP</p>
         <element class="row">
           <a href="cartpro.html">Add to cart</a>
         </element>
@@ -83,12 +121,18 @@
   </div>
   
   <div class="content">
-    <img src="images/tuna.jpg" alt="tuna" style="width:100%">
+    <div class="container">
+     <img src="images/tuna.jpg" alt="tuna" style="width:100%">
+     <div class="overlay">
+      <div class="text">The firm, meaty texture and rich, distinctive flavor of fresh Ahi Tuna makes it one of the most popular seafood choices around the globe. 
+        Ahi is a Hawaiian term that refers to both Yellowfin and Bigeye Tuna.</div>
+     </div>
+    </div>
     <h3>
       This Weeks special!!
       TUNA
     </h3>
-    <p>50 EGP</p>
+    <p>47.49 EGP</p>
     <element class="row">
       <a href="cartpro.html">Add to cart</a>
     </element>
