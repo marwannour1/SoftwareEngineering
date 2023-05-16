@@ -21,3 +21,9 @@ class Product(models.Model):
     price = models.PositiveIntegerField()
     quantity = models.IntegerField()
     customer = models.ManyToManyField(Customer, blank=True, related_name="customers")
+
+class Order(models.Model):
+    customer = models.ManyToManyField()
+    product = models.ManyToManyField()
+    quantity = models.IntegerField()
+    line_price= models.IntegerField()
