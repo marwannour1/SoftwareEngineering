@@ -20,10 +20,9 @@ class Product(models.Model):
     name = models.CharField(max_length=64)
     price = models.PositiveIntegerField()
     quantity = models.IntegerField()
-    customer = models.ManyToManyField(Customer, blank=True, related_name="customers")
 
 class Order(models.Model):
-    customer = models.ManyToManyField()
-    product = models.ManyToManyField()
+    customer = models.ManyToManyField(Customer, blank=True, related_name="customersss")
+    product = models.ManyToManyField(Product,blank=True,related_name="products")
     quantity = models.IntegerField()
-    line_price= models.IntegerField()
+    total_price= models.IntegerField()

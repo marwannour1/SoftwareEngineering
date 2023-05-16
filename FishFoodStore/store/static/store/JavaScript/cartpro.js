@@ -75,40 +75,5 @@ $(document).ready(function(){
       recalculateCart();
     });
     }
-  /* checkout buttons sends info to database */
-  var cart = {
-    'subtotal': parseFloat($('#cart-subtotal').text()),
-    'tax': parseFloat($('#cart-tax').text()),
-    'shipping': parseFloat($('#cart-shipping').text()),
-    'total': parseFloat($('#cart-total').text()),
-    'items': []
-  };
-  $('.product').each(function() {
-    var item = {
-      'id': $(this).find('.add-to-cart').data('product-id'),
-      'name': $(this).find('.product-title').text(),
-      'quantity': parseInt($(this).find('.product-quantity input').val()),
-      'price': parseFloat($(this).find('.product-price').text()),
-      'line_price': parseFloat($(this).find('.product-line-price').text())
-    };
-    cart.items.push(item);
-  });
-  
-  // Send an AJAX request to save the order
-  $.ajax({
-    url: '/checkout/',
-    type: 'POST',
-    data: {
-      'cart': cart
-    },
-    dataType: 'json',
-    success: function(response) {
-      // Redirect to the order confirmation page
-      window.location.href = '/order/' + response.order_id + '/';
-    },
-    error: function(xhr, status, error) {
-      console.error(error);
-    }
-  });
 });
 
