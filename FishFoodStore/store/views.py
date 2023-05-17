@@ -43,7 +43,7 @@ def login(request):
          
 
 
-    # return render(request, "store/sign_in.html")
+
 
 def signup(request):
     if request.method == 'POST':
