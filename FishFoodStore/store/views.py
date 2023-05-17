@@ -14,7 +14,7 @@ def authenticate(email=None, password=None, **kwargs):
     except Customer.DoesNotExist:
           return None
 
-
+customer = None
 
 # Create your views here.
 def home(request):
@@ -33,7 +33,7 @@ def login(request):
             return redirect('home')
         
         else:
-            customer = None
+            
             msg = "invalid email or password"
             return render(request, 'store/sign_in.html', {
                 "msg": msg
@@ -82,19 +82,23 @@ def signup(request):
 
 def add_to_cart(request, product_id):
     
-    product = get_object_or_404(Product, pk=product_id)
-    customer.cart.add(product)
-    return HttpResponse("Product added to cart.")
+    if request.method == 'POST':
+        product_id = request.POST.get('product_id')
+        product = Product.objects.get(pk=product_id)
+        customer.cart.add(product)
+        return HttpResponse("Product added to cart.")
 
 def cart(request):
-    
-    return render(request, "store/cartpro.html",{
-        "products" : customer.cart
-    })
+    if customer != None:
+        return render(request, "store/cartpro.html",{
+            "products" : customer.cart
+        })
+    else:
+        return redirect('login')
 
 def checkout(request):
     if request.method=="POST":
-        if customer !=None:
+        if customer != None:
             order = Order(customer=customer)
             order.save()
             for product in customer.cart.all():
@@ -103,6 +107,8 @@ def checkout(request):
         else:
             return redirect('login')
     return render(request, "store/checkout.html")
+
+
 
 
 
