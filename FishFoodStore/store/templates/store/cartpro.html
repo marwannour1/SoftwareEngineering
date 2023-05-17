@@ -15,10 +15,9 @@
 <body>
 
 <h1>Shopping Cart </h1>
-
+<form action="{% url 'checkout' %}" method="post">
+  {% csrf_token %}
 <div class="shopping-cart">
-  <form action="{% url 'checkout' %}" method="post">
-    {% csrf_token %}
   <div class="column-labels">
     <label class="product-image">Image</label>
     <label class="product-details">Product</label>
@@ -27,16 +26,16 @@
     <label class="product-removal">Remove</label>
     <label class="product-line-price">Total</label>
   </div>
-
+  {% for product in products%}
   <div class="product">
     <div class="product-image">
       <img src="https://media-cdn.greatbritishchefs.com/media/a24fj31z/img23663.jpg">
     </div>
     <div class="product-details">
-      <div class="product-title">sea bass</div>
+      <div class="product-title">{{product.name}}</div>
       <p class="product-description">enjoy our fresh sea bass!</p>
     </div>
-    <div class="product-price">120.99</div>
+    <div class="product-price">{{product.price}}</div>
     <div class="product-quantity">
       <input type="number" value="1" min="1">
     </div>
@@ -45,8 +44,9 @@
         Remove
       </button>
     </div>
-    <div class="product-line-price">120.99</div>
+    <div class="product-line-price">{{product.price}}</div>
   </div>
+  {%endfor%}
 
   <div class="product">
     <div class="product-image">
@@ -88,7 +88,7 @@
   </div>
  
   <button type="submit" class="checkout">Checkout</button>
-</form>
 </div>
+</form>
 </body>
 </html>

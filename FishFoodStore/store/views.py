@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
-from .models import Customer, Product,Order
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render,redirect
+from .models import Customer, OrderItem, Product,Order
 
 # Create your views here.
 def home(request):
@@ -11,13 +12,30 @@ def login(request):
 def signup(request):
     return render(request, "store/sign_up.html")
 
-def cart(request,product_id):
-    product=Product.objects.get(id=product_id)
+def add_to_cart(request, product_id):
+    customer = request.user.customer
+    product = get_object_or_404(Product, pk=product_id)
+    customer.cart.add(product)
+    return HttpResponse("Product added to cart.")
+
+def cart(request):
+    customer = request.user.customer
     return render(request, "store/cartpro.html",{
-        "product" : product
+        "products" : customer.cart
     })
 
 def checkout(request):
+    if request.method=="POST":
+        if request.POST.get('customer'):
+            customer_id = request.POST.get('customer')
+            customer = Customer.objects.get(pk=customer_id)
+            order = Order(customer=customer)
+            order.save()
+            for product in customer.cart.all():
+                order_item = OrderItem(order=order, product=product)
+                order_item.save()
+        else:
+            return redirect('login')
     return render(request, "store/checkout.html")
 
     
