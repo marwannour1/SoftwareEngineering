@@ -16,14 +16,17 @@
   <script src="{% static 'store/JavaScript/script_sign_up.js' %}"></script>
 </head>
 
+
 <body>
-  <!--first moving fish squad-->
+
+  <!-- first moving fish squad -->
   <div class="fish" id="fish"></div>
   <!--second moving fish squad-->
   <div class="fish" id="fish2"></div>
 
   <!-- multistep form -->
-  <form id="msform">
+  <form id="msform" method="POST">
+    {% csrf_token %}
     <!-- progressbar -->
     <ul id="progressbar">
       <li class="active">Account Setup</li>
@@ -36,7 +39,7 @@
       <h2 class="fs-title">Create your account</h2>
       <h3 class="fs-subtitle">Setup your email and password</h3>
       <input type="email" name="email" placeholder="Email" class="myForm" id="email" required />
-      <input type="password" name="pass" placeholder="Password" class="myForm" required />
+      <input type="password" name="password" placeholder="Password" class="myForm" required />
       <input type="password" name="cpass" placeholder="Confirm Password" class="myForm" required />
       <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
@@ -45,8 +48,8 @@
       <!--second forms fieldset of personal info-->
       <h2 class="fs-title">Personal Details</h2>
       <h3 class="fs-subtitle">We will never sell it</h3>
-      <input type="text" name="fname" placeholder="First Name" class="myForm" required />
-      <input type="text" name="lname" placeholder="Last Name" class="myForm" required />
+      <input type="text" name="firstName" placeholder="First Name" class="myForm" required />
+      <input type="text" name="lastName" placeholder="Last Name" class="myForm" required />
       <input type="tel" name="phone" placeholder="Phone" required pattern="[0-9]{11}" class="myForm" />
       <input type="button" name="previous" class="previous action-button" value="Previous" />
       <input type="button" name="next" class="next action-button" value="Next" />
@@ -56,7 +59,7 @@
       <!--third forms field set of address-->
       <h2 class="fs-title">Address</h2>
       <h3 class="fs-subtitle">Your current address</h3>
-      <input name="area" list="areas" placeholder="cairo district" class="myForm" />
+      <input name="district" list="areas" placeholder="cairo district" class="myForm" />
       <datalist id="areas">
         <option value="Mohandessin"></option>
         <option value="Dokki"></option>
@@ -70,17 +73,20 @@
       </datalist>
 
       <input type="text" name="streetName" placeholder="street name on google maps" class="myForm" />
-      <input type="text" name="buildingNo" placeholder="building number or name" class="myForm" />
+      <input type="number" name="buildingNumber" placeholder="building number or name" class="myForm" />
       <label for="addtionalInformation">Additional Information</label>
-      <textarea name="additional_information" id="additional"
+      <textarea name="additionalInfo" id="additional"
         placeholder="addtional infromation of address for example nearest landmark"></textarea>
       <input type="button" name="previous" class="previous action-button" value="Previous" />
       <input type="submit" name="next" class="next action-button" value="Submit" />
       </button>
     </fieldset>
-  </form>
+  </form> 
+
+  <h4 style="text-align: center; color: red;">{{msg}}</h4>
 
 
 </body>
+
 
 </html>

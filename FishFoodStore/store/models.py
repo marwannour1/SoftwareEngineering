@@ -1,5 +1,6 @@
 from django.db import models
-from django.core import validators
+from django.urls import reverse
+from django.core.validators import MinLengthValidator
 
 # Create your models here.
 class Customer(models.Model):
@@ -7,7 +8,7 @@ class Customer(models.Model):
     password = models.CharField(max_length=100)
     firstName = models.CharField(max_length=20)
     lastName = models.CharField(max_length=20)
-    phone = models.PositiveIntegerField()
+    phone = models.CharField(max_length=11, validators=[MinLengthValidator(11)])
     district = models.CharField(max_length=50)
     streetName = models.CharField(max_length=50)
     buildingNumber = models.PositiveIntegerField()
@@ -15,6 +16,9 @@ class Customer(models.Model):
     ordered = models.BooleanField(default=False)
     delivered = models.BooleanField(default=False)
 
+    
+    def __str__(self) -> str:
+        return f"{self.firstName} {self.lastName}"
 
 class Product(models.Model):
     name = models.CharField(max_length=64)

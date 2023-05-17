@@ -23,7 +23,9 @@
     
         <div class="fish" id="fish2"></div>    <!--second moving fish squad-->
     
-        <form id="waterform" method="post">    <!--begin form-->
+        <form id="waterform" method="POST">    <!--begin form-->
+
+            {% csrf_token %}
     
             <div class="formgroup" id="email-form">      <!--email form-->
                 <label for="email">Your e-mail*</label>
@@ -38,9 +40,10 @@
     
             <input type="submit" value="Sign in!" class="submit"/>       <!--submit button to sign in--> 
             <p>Not registered?</p>
-            <a href="sign_up.html" style="text-align: center;">Create an account!</a>  <!--link to go to sign up page-->
+            <a href="{% url 'signup' %}" style="text-align: center;">Create an account!</a>  <!--link to go to sign up page-->
     </form>
 
+    <h4 style="text-align: center; color: red;">{{msg}}</h4>
     </div>
 </body>
 </html>
