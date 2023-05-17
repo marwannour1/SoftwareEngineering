@@ -18,7 +18,7 @@ class Customer(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=64)
-    price = models.PositiveIntegerField()
+    price = models.DecimalField(max_digits=8, decimal_places=2)
     quantity = models.IntegerField()
 class Order(models.Model):
     STATUS_CHOICES = [
