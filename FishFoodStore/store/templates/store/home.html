@@ -1,149 +1,162 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="html">
+<html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="{% static 'store/CSS/homepagestyle.css'%}">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Teko&display=swap" rel="stylesheet">
-<link rel="icon" href="{% static 'store/images/fish-store-website-favicon-color (1).png' %}" type="image/x-icon" />
-
-
-    <title>kheer El Bahr</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Teko&display=swap" rel="stylesheet">
+	<link rel="icon" href="images/fish-store-website-favicon-color (1).png" type="image/x-icon">
+	<title>Kheir El-Bahr - Online Fish Food Store</title>
+	<link rel="stylesheet" href="{% static 'store/css/homepagestyle.css' %}">
 </head>
+<body>
+	<nav class="topnav">
+		<div class="search-container">
+		  <form action="/action_page.php">
+			<input type="text" placeholder="Search.." name="search">
+			<button type="submit">Submit</button>
+		  </form>
+		</div>
+		<a href="{% url 'home' %}"><i class="fa fa-fw fa-home" style="font-size:30px;"></i> Home</a>
+		<a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" style="font-size:28px;"></i> Shopping cart</a>
+		<a href="{% url 'signup' %}"><i class="fa fa-bars" style="font-size:24px;"></i> Sign up</a>
+		<a href="{% url 'login' %}"><i class="fa fa-fw fa-envelope" style="font-size:25px;"></i> Login</a>
+	</nav>
+	<header>
+		
+			<div class="hero">
+				<div class="container">
+					<h2>Welcome to Kheir El-Bahr</h2>
+					<p>Your one-stop shop for fresh, high-quality fish food</p>
+	
+				</div>
+			</div>
 
-<body style="margin: 0;">
-
-  <div class="topnav">
-    <div class="search-container">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <a href="#"><i class="fa fa-fw fa-home" style="font-size:30px;"></i> Home</a>
-    <a href="{%url 'cart'%}"><i class="fa fa-shopping-cart" style="font-size:28px;"></i> Shopping cart</a>
-    <a href="{%url 'signup'%}"><i class="fa fa-bars" style="font-size:24px;"></i> Sign up</a>
-    <a href="{%url 'login'%}"><i class="fa fa-fw fa-envelope" style="font-size:25px;"></i> Login</a>
-  </div>
-  
-  <!-- Page content -->
-  <div class="bg-image"></div>
-
-  <div class="bg-text">
-    <h1 style="font-family:  'Teko', sans-serif;">Kheer El Bahr</h1>
-    <p style="font-family:  'Teko', sans-serif; font-size: 40px;">The Highest Quality Fish</p>
-  </div>
-  
-
-
-<div class="main2">
-
-  <h1>OUR PRODUCTS</h1>
-  
-  <hr>
-  
-  <h2>FISH</h2>
-  <p style="font-family: 'Teko', sans-serif; font-size: 30px;">select from a wide range of fish</p>
-  
-  <!-- Portfolio Gallery Grid -->
-  <div class="row">
-    <div class="column">
-      <div class="content">
-        <div class="container">
-         <img src="images/cod.jpg" alt="cod" style="width:100%">
-         <div class="overlay">
-          <div class="text">Cod is one of the most popular fish types in the United States. 
-            Cod is a white fish that has a mild flavor and can be baked, broiled, fried, or steamed. Cod are available 
-            year-round but the best time to purchase them is during the winter months.</div>
-         </div>
-        </div>
-        <h3>COD</h3>
-        <p>20.89 EGP</p>
-        <element class="row">
-          <a href="cartpro.html">Add to cart</a>
-        </element>
-      </div>
-    </div>
-    <div class="column">
-      <div class="content">
-        <div class="container">
-         <img src="images/fluke_fillet.jpg" alt="FLUKE" style="width:100%">
-         <div class="overlay">
-          <div class="text">The Fluke or Summer Flounder has a mild and delicate flavor and is great for those who don't 
+	</header>
+	<main>
+		<section class="products">
+			<div class="container">
+				<h2>Our Products</h2>
+				<div class="grid">
+					<div class="product">
+						<img src="https://www.seaangler.co.uk/wp-content/uploads/sites/3/cod-2-1.jpg" alt="COD">
+						<h3>{{ myproductname1.name }}</h3>
+						<p>{{ myproductname1.price }} EGP</p>
+            <br>
+            <p>
+              Cod is a white fish that has a mild flavor and can be baked, broiled, fried, or steamed.
+            </p>
+            <form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="{{ myproductname1.id }}">
+              <button type="submit">Add to Cart</button>
+            </form>
+					</div>
+					<div class="product">
+						<img src="https://harborfish.com/wp-content/uploads/2018/04/flounder-final.jpg" alt="Fish 2">
+						<h3>{{ myproductname2.name }}</h3>
+						<p>{{ myproductname2.price }} EGP</p>
+            <br>
+            <p>
+              The Fluke or Summer Flounder has a mild and delicate flavor and is great for those who don't 
             typically eat seafood . 
-             With no “fishy” taste and a light texture, fluke is perfectly paired with delicate sauces and seasonings.</div>
-         </div>
-        </div>
-        <h3>FLUKE FILLET</h3>
-        <p>32.29 EGP</p>
-        <element class="row">
-          <a href="cartpro.html">Add to cart</a>
-        </element>
-      </div>
-    </div>
-    <div class="column">
-      <div class="content">
-        <div class="container">
-         <img src="images/salmon.jpg" alt="SALMON" style="width:100%">
-         <div class="overlay">
-          <div class="text">Our Atlantic salmon has a melt-in-your-mouth texture and tender flakes.
-             Thanks to our direct relationships with select farms we are able to deliver the finest salmon direct from the source.</div>
-         </div>
-        </div>
-        <h3>SALMON</h3>
-        <p>19.94 EGP</p>
-        <element class="row">
-          <a href="cartpro.html">Add to cart</a>
-        </element>
-      </div>
-    </div>
-    <div class="column">
-      <div class="content">
-        <div class="container">
-         <img src="images/whole_common_carp.jpg" alt="whole_common_carp" style="width:100%">
-         <div class="overlay">
-          <div class="text">The common carp, or European carp,
-             is a widespread freshwater fish with a mild flavor and tender flesh, with practically no “fishy” taste.</div>
-         </div>
-        </div>
-        <h3>WHOLE COMMON CARP</h3>
-        <p>34.19 EGP</p>
-        <element class="row">
-          <a href="cartpro.html">Add to cart</a>
-        </element>
-      </div>
-    </div>
-  </div>
-  
-  <div class="content">
-    <div class="container">
-     <img src="images/tuna.jpg" alt="tuna" style="width:100%">
-     <div class="overlay">
-      <div class="text">The firm, meaty texture and rich, distinctive flavor of fresh Ahi Tuna makes it one of the most popular seafood choices around the globe. 
-        Ahi is a Hawaiian term that refers to both Yellowfin and Bigeye Tuna.</div>
-     </div>
-    </div>
-    <h3>
-      This Weeks special!!
-      TUNA
-    </h3>
-    <p>47.49 EGP</p>
-    <element class="row">
-      <a href="cartpro.html">Add to cart</a>
-    </element>
-  </div>
-  
-  <!-- END MAIN -->
-  </div>
-</body>
-
-
-
-</html>
+            </p>
+						<form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="{{ myproductname2.id }}">
+              <button type="submit">Add to Cart</button>
+            </form>
+					</div>
+					<div class="product">
+						<img src="{% static 'store/images/salmon.jpg' %}" alt="Fish 3">
+						<h3>{{ myproductname3.name }}</h3>
+						<p>{{ myproductname3.price }} EGP</p>
+            <br>
+            <p>
+              Our Atlantic salmon has a melt-in-your-mouth texture and tender flakes.
+            </p>
+						<form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="{{ myproductname3.id }}">
+              <button type="submit">Add to Cart</button>
+            </form>
+					</div>
+					<div class="product">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Cyprinus_carpio.jpeg/1200px-Cyprinus_carpio.jpeg" alt="Fish 4">
+						<h3>{{ myproductname4.name }}</h3>
+						<p>{{ myproductname4.price }} EGP</p>
+            <br>
+            <p>
+              The common carp,
+             is a widespread freshwater fish with a mild flavor and tender flesh, with practically no “fishy” taste.
+            </p>
+						<form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="{{ myproductname4.id }}">
+              <button type="submit">Add to Cart</button>
+            </form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="best-sellers">
+			<div class="container">
+				<h2>Best Sellers</h2>
+				<div class="grid2">
+					<div class="product">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Bluefin-big.jpg/1200px-Bluefin-big.jpg" alt="Fish 5">
+						<h3>{{ myproductname5.name }}</h3>
+						<p>{{ myproductname5.price }} EGP</p>
+            <br>
+            <p>
+              The firm, meaty texture and rich, distinctive flavor of fresh Ahi Tuna makes it one of the most popular.
+            </p>
+						<form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="{{ myproductname5.id }}">
+              <button type="submit">Add to Cart</button>
+            </form>
+					</div>
+					<div class="product">
+						<img src="https://media-cdn2.greatbritishchefs.com/media/a24fj31z/img23663.jpg" alt="Fish 6">
+						<h3>{{ myproductname6.name }}</h3>
+						<p>{{ myproductname6.price }} EGP</p>
+            <br>
+            <p>
+              Fresh - Wild Sea bass Whole Fish
+            </p>
+						<form method="post">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="{{ myproductname6.id }}">
+              <button type="submit">Add to Cart</button>
+            </form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="about-us">
+			<div class="container">
+				<h2>About Us</h2>
+				<p>Kheir El-Bahr is an online fish food store that provides high-quality raw fish for customers to eat. Our products are sourced from local fishermen and are always fresh and delicious. We believe in sustainability and supporting our local communities.</p>
+				<a href="#" class="button">Learn More</a>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div class="container">
+			<div class="contact-info">
+				<p><i class="fas fa-map-marker-alt"></i>123 Main St, Anytown USA</p>
+				<p><i class="fas fa-phone"></i>(123) 456-7890</p>
+				<p><i class="fas fa-envelope"></i>info@kheirelbahr.com</p>
+			</div>
+		
+		</footer>
+		<script src="https://kit.fontawesome.com/your-font-awesome-key.js" crossorigin="anonymous"></script>
+		<script src="script.js"></script>
+	</body>
+	</html>
